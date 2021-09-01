@@ -45,10 +45,12 @@ class HomeScreen extends StatelessWidget {
                   AgentTile(
                     name: 'Initiators',
                     img: 'assets/png/logo.png',
+                    screen: 'initiator',
                   ),
                   AgentTile(
                     name: 'Sentinels',
                     img: 'assets/png/logo.png',
+                    screen: 'sentinel',
                   ),
                 ],
               ),
@@ -59,10 +61,12 @@ class HomeScreen extends StatelessWidget {
                   AgentTile(
                     name: 'Duelists',
                     img: 'assets/png/logo.png',
+                    screen: 'duelist',
                   ),
                   AgentTile(
                     name: 'Controllers',
                     img: 'assets/png/logo.png',
+                    screen: 'controller',
                   ),
                 ],
               ),

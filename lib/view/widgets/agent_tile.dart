@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AgentTile extends StatelessWidget {
-  final name, img;
-  const AgentTile({Key? key, this.name, this.img}) : super(key: key);
+  final name, img, screen;
+  const AgentTile({Key? key, this.name, this.img, this.screen})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.toNamed('/agent');
+        Get.toNamed('/$screen');
       },
       child: Container(
         height: 90,
