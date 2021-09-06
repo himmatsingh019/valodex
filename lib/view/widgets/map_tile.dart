@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MapTile extends StatelessWidget {
-  final name, img;
-  const MapTile({Key? key, this.name, this.img}) : super(key: key);
+  final name, img, map;
+  const MapTile({Key? key, this.name, this.img, this.map}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Get.toNamed('/$map');
+      },
       child: Container(
         height: 84,
         width: 150,

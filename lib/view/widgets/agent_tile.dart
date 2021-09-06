@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AgentTile extends StatelessWidget {
-  final name, img, screen;
-  const AgentTile({Key? key, this.name, this.img, this.screen})
-      : super(key: key);
+  final name, screen;
+  const AgentTile({Key? key, this.name, this.screen}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +32,7 @@ class AgentTile extends StatelessWidget {
               opacity: 0.5,
               child: Center(
                 child: Image.asset(
-                  img,
+                  'assets/png/logo.png',
                   height: 30,
                   width: 40,
                 ),

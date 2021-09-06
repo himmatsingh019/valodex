@@ -43,7 +43,7 @@ class _CustomTabBarState extends State<CustomTabBar> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Container(
         height: Get.height,
         child: Scaffold(
@@ -59,7 +59,6 @@ class _CustomTabBarState extends State<CustomTabBar> {
               tabs: [
                 Tab(text: 'About'),
                 Tab(text: 'Abilities'),
-                Tab(text: 'Strategies'),
               ],
             ),
           ),
@@ -77,19 +76,12 @@ class _CustomTabBarState extends State<CustomTabBar> {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    abilities(widget.ab1, widget.desc1, widget.img1),
-                    abilities(widget.ab2, widget.desc2, widget.img2),
-                    abilities(widget.ab3, widget.desc3, widget.img3),
-                    abilities(widget.ab4, widget.desc4, widget.img4),
+                    // abilities(widget.ab1, widget.desc1, widget.img1),
+                    // abilities(widget.ab2, widget.desc2, widget.img2),
+                    // abilities(widget.ab3, widget.desc3, widget.img3),
+                    // abilities(widget.ab4, widget.desc4, widget.img4),
                     SizedBox(height: 6)
                   ],
-                ),
-                Text(
-                  widget.strategies,
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                  ),
                 ),
               ],
             ),

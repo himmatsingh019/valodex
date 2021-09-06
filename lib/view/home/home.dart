@@ -44,12 +44,10 @@ class HomeScreen extends StatelessWidget {
                 children: <Widget>[
                   AgentTile(
                     name: 'Initiators',
-                    img: 'assets/png/logo.png',
                     screen: 'initiator',
                   ),
                   AgentTile(
                     name: 'Sentinels',
-                    img: 'assets/png/logo.png',
                     screen: 'sentinel',
                   ),
                 ],
@@ -60,12 +58,10 @@ class HomeScreen extends StatelessWidget {
                 children: <Widget>[
                   AgentTile(
                     name: 'Duelists',
-                    img: 'assets/png/logo.png',
                     screen: 'duelist',
                   ),
                   AgentTile(
                     name: 'Controllers',
-                    img: 'assets/png/logo.png',
                     screen: 'controller',
                   ),
                 ],
@@ -87,24 +83,36 @@ class HomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  MapTile(name: 'Accent', img: 'assets/png/accent.png'),
-                  MapTile(name: 'Bind', img: 'assets/png/bind.png'),
+                  MapTile(
+                      name: 'Ascent',
+                      img: 'assets/png/accent.png',
+                      map: 'ascent'),
+                  MapTile(
+                      name: 'Bind', img: 'assets/png/bind.png', map: 'bind'),
                 ],
               ),
               SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  MapTile(name: 'Breeze', img: 'assets/png/breeze.png'),
-                  MapTile(name: 'Haven', img: 'assets/png/haven.png'),
+                  MapTile(
+                      name: 'Breeze',
+                      img: 'assets/png/breeze.png',
+                      map: 'breeze'),
+                  MapTile(
+                      name: 'Haven', img: 'assets/png/haven.png', map: 'haven'),
                 ],
               ),
               SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  MapTile(name: 'Icebox', img: 'assets/png/icebox.png'),
-                  MapTile(name: 'Split', img: 'assets/png/split.png'),
+                  MapTile(
+                      name: 'Icebox',
+                      img: 'assets/png/icebox.png',
+                      map: 'icebox'),
+                  MapTile(
+                      name: 'Split', img: 'assets/png/split.png', map: 'split'),
                 ],
               ),
               SizedBox(height: 20),

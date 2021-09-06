@@ -84,9 +84,16 @@ class DuelistScreen extends StatelessWidget {
                         ),
                       ),
                       CustomTabBar(
-                        img1: 'jett/drift',
+                        desc1: 'INSTANTLY propel Jett high into the air.',
+                        desc2:
+                            'INSTANTLY throw a projectile that expands into a brief vision-blocking cloud on impact with a surface. HOLD the ability key to curve the smoke in the direction of your crosshair.',
+                        desc3:
+                            'INSTANTLY propel Jett in the direction she is moving. If Jett is standing still, she will propel forward.',
+                        desc4:
+                            'EQUIP a set of highly accurate throwing knives that recharge on killing an opponent. FIRE to throw a single knife at your target. ALTERNATE FIRE to throw all remaining daggers at your target.',
+                        img1: 'jett/updraft',
                         img2: 'jett/cloud',
-                        img3: 'jett/updraft',
+                        img3: 'jett/tail',
                         img4: 'jett/blade',
                         about:
                             'From Korea comes Jett, an agile fighter who prioritizes movement over everything. Her abilities include a teleportation-based dash and an updraft that lets her reach higher ledges. She also has a smokebomb ability to hinder sightlines and a powerful Bladestorm ultimate that deals moderate-to-heavy damage and remains accurate even while she\'s moving.'
@@ -95,9 +102,9 @@ class DuelistScreen extends StatelessWidget {
                         strategies:
                             'When using Blade Storm, remember that you can always keep moving as the blades are fully accurate at all times.'
                             '\n\nUsing Updraft can get you to higher ground and get some easy kills against opponents who don\'t expect you to be on an off angle.',
-                        ab1: 'DRIFT',
+                        ab1: 'UPDRAFT',
                         ab2: 'CLOUD BURST',
-                        ab3: 'UPDRAFT',
+                        ab3: 'TAILWIND',
                         ab4: 'BLADE STORM',
                       ),
                     ],
