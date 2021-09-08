@@ -44,11 +44,11 @@ class HomeScreen extends StatelessWidget {
                 children: <Widget>[
                   AgentTile(
                     name: 'Initiators',
-                    screen: 'initiator',
+                    role: 'Initiator',
                   ),
                   AgentTile(
                     name: 'Sentinels',
-                    screen: 'sentinel',
+                    role: 'Sentinel',
                   ),
                 ],
               ),
@@ -58,11 +58,11 @@ class HomeScreen extends StatelessWidget {
                 children: <Widget>[
                   AgentTile(
                     name: 'Duelists',
-                    screen: 'duelist',
+                    role: 'Duelist',
                   ),
                   AgentTile(
                     name: 'Controllers',
-                    screen: 'controller',
+                    role: 'Controller',
                   ),
                 ],
               ),

@@ -1,7 +1,6 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:valodex/approutes.dart';
+import 'package:valodex/navigation/approutes.dart';
 import 'package:valodex/services/dio.dart';
 import 'package:valodex/utils/materialTheme.dart';
 
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/controller',
+      initialRoute: '/splash',
       theme: getMaterialTheme(context),
       getPages: Approutes.routes,
     );

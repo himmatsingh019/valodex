@@ -4,7 +4,7 @@ import 'package:valodex/services/agent_service.dart';
 
 class AgentController extends GetxController {
   List<Agent> agents = [];
-  var currentPageIndex = 0.obs;
+  Agent? selectedAgent;
 
   @override
   void onInit() {
@@ -17,15 +17,15 @@ class AgentController extends GetxController {
 
     if (_agents != null) {
       agents = _agents;
-      update();
+
+      Get.offNamed('/home');
     } else {
       Get.snackbar('Error occured', 'Try again');
     }
   }
 
-  pageChanged() {
-    currentPageIndex++;
+  void changedAgent(String id) {
+    selectedAgent = agents.firstWhere((element) => element.id == id);
     update();
-    return currentPageIndex;
   }
 }

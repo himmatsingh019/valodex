@@ -17,13 +17,13 @@ class WeaponTile extends StatelessWidget {
               image: DecorationImage(
                 image: AssetImage(img),
               ),
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.2),
                   spreadRadius: 2,
                   blurRadius: 4,
-                  offset: Offset(0, 3),
+                  offset: Offset(0, 4),
                 ),
               ],
               color: Color(0xFFE8E8E8),

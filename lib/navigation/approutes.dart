@@ -1,8 +1,4 @@
 import 'package:get/get.dart';
-import 'package:valodex/view/agent/pages/controller.dart';
-import 'package:valodex/view/agent/pages/duelist.dart';
-import 'package:valodex/view/agent/pages/initiator.dart';
-import 'package:valodex/view/agent/pages/sentinels.dart';
 import 'package:valodex/view/home/home.dart';
 import 'package:valodex/view/maps/pages/ascent.dart';
 import 'package:valodex/view/maps/pages/bind.dart';
@@ -10,30 +6,18 @@ import 'package:valodex/view/maps/pages/breeze.dart';
 import 'package:valodex/view/maps/pages/haven.dart';
 import 'package:valodex/view/maps/pages/icebox.dart';
 import 'package:valodex/view/maps/pages/split.dart';
+import 'package:valodex/view/splash/splash.dart';
 
 class Approutes {
   static final routes = [
+    // Screen Routes
     GetPage(
       name: '/home',
       page: () => HomeScreen(),
     ),
-
-    // Agent Screen
     GetPage(
-      name: '/duelist',
-      page: () => DuelistScreen(),
-    ),
-    GetPage(
-      name: '/controller',
-      page: () => ControllerScreen(),
-    ),
-    GetPage(
-      name: '/sentinel',
-      page: () => SentinelScreen(),
-    ),
-    GetPage(
-      name: '/initiator',
-      page: () => InitiatorScreen(),
+      name: '/splash',
+      page: () => SplashScreen(),
     ),
 
     //Map Routes

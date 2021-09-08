@@ -20,7 +20,7 @@ class MapTile extends StatelessWidget {
                 Colors.white.withOpacity(0.8), BlendMode.dstATop),
             image: AssetImage(img),
           ),
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.2),

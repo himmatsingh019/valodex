@@ -1,21 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:valodex/view/agent/agent%20copy.dart';
+import 'package:valodex/view/agent/agent.dart';
 
 class AgentTile extends StatelessWidget {
-  final name, screen;
-  const AgentTile({Key? key, this.name, this.screen}) : super(key: key);
+  final String name, role;
+  const AgentTile({Key? key, required this.name, required this.role})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.toNamed('/$screen');
+        Get.to(
+          () => AgentScreen2(roleType: role.toLowerCase()),
+        );
       },
       child: Container(
         height: 90,
         width: 150,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.2),
