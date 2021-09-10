@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:valodex/pages/maps/map.dart';
 
 class MapTile extends StatelessWidget {
   final name, img, map;
@@ -9,7 +10,10 @@ class MapTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.toNamed('/$map');
+        Get.to(
+          () => MapScreen(mapName: map),
+        );
+        print(map);
       },
       child: Container(
         height: 84,

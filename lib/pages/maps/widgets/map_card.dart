@@ -1,50 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-class MapCard extends StatelessWidget {
-  final image, name, description, feature;
-  const MapCard(
-      {Key? key, this.image, this.name, this.description, this.feature})
-      : super(key: key);
+class MapDetail extends StatelessWidget {
+  const MapDetail({
+    Key? key,
+    this.image,
+    this.name,
+    this.overview,
+    this.features,
+  }) : super(key: key);
+
+  final image, name, overview, features;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          width: Get.width,
-          height: 60,
-          child: IconButton(
-            splashRadius: 1,
-            alignment: Alignment.centerLeft,
-            icon: Icon(Icons.arrow_back),
-            onPressed: () {
-              Get.back();
-            },
-          ),
-        ),
         Stack(
           children: [
-            Image.network(
-              image,
-            ),
+            Image.network(image),
             Positioned(
-              bottom: 20,
-              right: 10,
+              bottom: 12,
+              right: 20,
               child: Container(
-                width: 90,
-                height: 40,
+                height: 38,
+                width: 110,
                 decoration: BoxDecoration(
-                  color: Colors.white70,
                   borderRadius: BorderRadius.circular(10),
+                  color: Colors.white70,
                 ),
                 child: Center(
                   child: Text(
                     name,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 3,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 2,
                     ),
                   ),
                 ),
@@ -52,31 +43,33 @@ class MapCard extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 16),
+        SizedBox(height: 18),
         Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: Text(
-            '// OVERVIEW',
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '// OVERVIEW',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 18),
+              Text(overview),
+              SizedBox(height: 20),
+              Text(
+                '// MAP FEATURES',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 18),
+              Text(features),
+            ],
           ),
-        ),
-        SizedBox(height: 10),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-          child: Text(description),
-        ),
-        SizedBox(height: 16),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-          child: Text(
-            '// MAP FEATURES',
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          ),
-        ),
-        SizedBox(height: 8),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-          child: Text(feature),
         ),
       ],
     );

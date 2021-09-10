@@ -54,99 +54,114 @@ class AgentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return NestedScrollView(
-      headerSliverBuilder: (context, innerBoxIsScrolled) {
-        return [
-          SliverAppBar(
-            backgroundColor: colorConvert(color!),
-            expandedHeight: 480,
-            pinned: true,
-            stretch: true,
-            flexibleSpace: FlexibleSpaceBar(
-              title: Text(
-                name,
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-              ),
-              centerTitle: true,
-              background: Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(top: 80),
-                    width: Get.width,
-                    color: colorConvert(color!),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Image.network(
-                          baseURL + agentsImageURL + image + '.png',
-                          height: 330,
+    return CustomScrollView(
+      slivers: <Widget>[
+        SliverAppBar(
+          backgroundColor: colorConvert(color!),
+          expandedHeight: 480,
+          pinned: true,
+          stretch: true,
+          flexibleSpace: FlexibleSpaceBar(
+            title: Text(
+              name,
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            ),
+            centerTitle: true,
+            background: Column(
+              children: [
+                Container(
+                  padding: EdgeInsets.only(top: 80),
+                  width: Get.width,
+                  color: colorConvert(color!),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Image.network(
+                        baseURL + agentsImageURL + image + '.png',
+                        height: 330,
+                      ),
+                      SizedBox(height: 30),
+                      Container(
+                        height: 28,
+                        width: 120,
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.5),
+                          borderRadius: BorderRadius.circular(10),
                         ),
-                        SizedBox(height: 30),
-                        Container(
-                          height: 28,
-                          width: 120,
-                          decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.5),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Center(
-                            child: Text(
-                              type,
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
+                        child: Center(
+                          child: Text(
+                            type,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
-        ];
-      },
-      body: Padding(
-        padding: const EdgeInsets.only(left: 12.0, right: 8, top: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              '// OVERVIEW',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 10),
-            Text(overview),
-            SizedBox(height: 10),
-            Text(
-              '// ABILTIES',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 20),
-            AbilityCard(
-                image: icon1, ability: displayName1, description: desc1),
-            SizedBox(height: 18),
-            AbilityCard(
-                image: icon2, ability: displayName2, description: desc2),
-            SizedBox(height: 18),
-            AbilityCard(
-                image: icon3, ability: displayName3, description: desc3),
-            SizedBox(height: 18),
-            AbilityCard(
-                image: icon4, ability: displayName4, description: desc4),
-            SizedBox(height: 18),
-          ],
         ),
-      ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (context, index) {
+              return Padding(
+                padding: const EdgeInsets.only(left: 12.0, right: 8, top: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '// OVERVIEW',
+                      style: TextStyle(
+                        fontSize: 20,
+                        letterSpacing: 1.2,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(overview),
+                    SizedBox(height: 10),
+                    Text(
+                      '// ABILTIES',
+                      style: TextStyle(
+                        fontSize: 20,
+                        letterSpacing: 1.8,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    AbilityCard(
+                        image: icon1,
+                        ability: displayName1,
+                        description: desc1),
+                    SizedBox(height: 18),
+                    AbilityCard(
+                        image: icon2,
+                        ability: displayName2,
+                        description: desc2),
+                    SizedBox(height: 18),
+                    AbilityCard(
+                        image: icon3,
+                        ability: displayName3,
+                        description: desc3),
+                    SizedBox(height: 18),
+                    AbilityCard(
+                        image: icon4,
+                        ability: displayName4,
+                        description: desc4),
+                    SizedBox(height: 18),
+                  ],
+                ),
+              );
+            },
+            childCount: 1,
+          ),
+        ),
+      ],
     );
   }
 }
@@ -163,6 +178,7 @@ class AbilityCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
           height: 150,
@@ -188,7 +204,10 @@ class AbilityCard extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-              Container(width: 400, child: Text(description))
+              Container(
+                width: 400,
+                child: Text(description),
+              ),
             ],
           ),
         ),
