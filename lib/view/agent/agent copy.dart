@@ -14,48 +14,47 @@ class AgentScreen2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            Container(
-              height: 500,
-              child: Builder(
-                builder: (context) {
-                  List<Agent> agents = agentController.agents
-                      .where((element) =>
-                          element.roleName!.toLowerCase() == roleType)
-                      .toList();
+      body: Column(
+        children: [
+          Container(
+            height: 500,
+            child: Builder(
+              builder: (context) {
+                List<Agent> agents = agentController.agents
+                    .where((element) =>
+                        element.roleName!.toLowerCase() == roleType)
+                    .toList();
 
-                  Future.delayed(Duration.zero).then(
-                    (value) => agentController.changedAgent(agents[0].id!),
-                  );
+                Future.delayed(Duration.zero).then(
+                  (value) => agentController.changedAgent(agents[0].id!),
+                );
 
-                  return PageView.builder(
-                    onPageChanged: (index) {
-                      if (agents.length > 0) {
-                        agentController.changedAgent(agents[index].id!);
-                      }
-                    },
-                    itemCount: agents.length,
-                    itemBuilder: (context, index) => AgentCard(
-                      name: agents[index].displayName,
-                      type: agents[index].roleName,
-                      image: agents[index].id,
-                      color: agents[index].color,
-                    ),
-                  );
-                },
-              ),
+                return PageView.builder(
+                  onPageChanged: (index) {
+                    if (agents.length > 0) {
+                      agentController.changedAgent(agents[index].id!);
+                    }
+                  },
+                  itemCount: agents.length,
+                  itemBuilder: (context, index) => AgentCard(
+                    name: agents[index].displayName,
+                    type: agents[index].roleName,
+                    image: agents[index].id,
+                    color: agents[index].color,
+                    data: agents[index].description,
+                  ),
+                );
+              },
             ),
-            GetBuilder<AgentController>(builder: (controller) {
-              return Expanded(
-                child: DetailCard(
-                  about: controller.selectedAgent!.description,
-                ),
-              );
-            }),
-          ],
-        ),
+          ),
+          // GetBuilder<AgentController>(builder: (controller) {
+          //   return Expanded(
+          //     child: DetailCard(
+          //       about: controller.selectedAgent!.description,
+          //     ),
+          //   );
+          // }),
+        ],
       ),
     );
   }
