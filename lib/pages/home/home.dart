@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:valodex/view/widgets/agent_tile.dart';
-import 'package:valodex/view/widgets/map_tile.dart';
-import 'package:valodex/view/widgets/weapon_tile.dart';
+import 'package:valodex/pages/widgets/agent_tile.dart';
+import 'package:valodex/pages/widgets/map_tile.dart';
+import 'package:valodex/pages/widgets/weapon_tile.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);

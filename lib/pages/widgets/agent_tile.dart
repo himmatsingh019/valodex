@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:valodex/view/agent/agent%20copy.dart';
-import 'package:valodex/view/agent/agent.dart';
+import 'package:valodex/pages/agent/agent.dart';
 
 class AgentTile extends StatelessWidget {
   final String name, role;
@@ -13,7 +12,7 @@ class AgentTile extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Get.to(
-          () => AgentScreen2(roleType: role.toLowerCase()),
+          () => AgentScreen(roleType: role.toLowerCase()),
         );
       },
       child: Container(
