@@ -132,24 +132,47 @@ class HomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  WeaponTile(name: 'Sidearms', img: 'assets/png/classic.png'),
-                  WeaponTile(name: 'Primary', img: 'assets/png/stinger.png'),
+                  WeaponTile(
+                      name: 'Sidearms',
+                      image: 'assets/png/classic.png',
+                      category: 'sidearms'),
+                  WeaponTile(
+                    name: 'Primary',
+                    image: 'assets/png/stinger.png',
+                    category: 'SMGs',
+                  ),
                 ],
               ),
               SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  WeaponTile(name: 'Shotguns', img: 'assets/png/judge.png'),
-                  WeaponTile(name: 'Rifles', img: 'assets/png/vandal.png'),
+                  WeaponTile(
+                    name: 'Shotguns',
+                    image: 'assets/png/judge.png',
+                    category: 'shotguns',
+                  ),
+                  WeaponTile(
+                    name: 'Rifles',
+                    image: 'assets/png/vandal.png',
+                    category: 'assault rifles',
+                  ),
                 ],
               ),
               SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  WeaponTile(name: 'Snipers', img: 'assets/png/operator.png'),
-                  WeaponTile(name: 'Melee', img: 'assets/png/knife.png'),
+                  WeaponTile(
+                    name: 'Snipers',
+                    image: 'assets/png/operator.png',
+                    category: 'snipers',
+                  ),
+                  WeaponTile(
+                    name: 'Melee',
+                    image: 'assets/png/knife.png',
+                    category: 'melee',
+                  ),
                 ],
               ),
               SizedBox(height: 20),

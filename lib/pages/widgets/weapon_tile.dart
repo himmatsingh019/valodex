@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:valodex/pages/weapon/weapon.dart';
 
 class WeaponTile extends StatelessWidget {
-  final name, img;
-  const WeaponTile({Key? key, this.name, this.img}) : super(key: key);
+  final String name, image, category;
+  const WeaponTile(
+      {Key? key,
+      required this.name,
+      required this.image,
+      required this.category})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Get.to(
+          () => WeaponScreen(gunType: category.toLowerCase()),
+        );
+      },
       child: Column(
         children: <Widget>[
           Container(
@@ -15,7 +26,7 @@ class WeaponTile extends StatelessWidget {
             width: 150,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(img),
+                image: AssetImage(image),
               ),
               borderRadius: BorderRadius.circular(10),
               boxShadow: [

@@ -2,49 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:valodex/models/agents_model.dart';
 import 'package:valodex/utils/constant.dart';
 
 class AgentCard extends StatelessWidget {
   final height = Get.height;
   final width = Get.width;
 
-  final name,
-      type,
-      image,
-      overview,
-      displayName1,
-      icon1,
-      displayName2,
-      icon2,
-      displayName3,
-      icon3,
-      displayName4,
-      icon4,
-      desc1,
-      desc2,
-      desc3,
-      desc4;
+  final Agent agent;
+
   String? color;
-  AgentCard({
-    Key? key,
-    this.name,
-    this.type,
-    this.overview,
-    this.image,
-    required this.color,
-    this.displayName1,
-    this.icon1,
-    this.displayName2,
-    this.icon2,
-    this.displayName3,
-    this.icon3,
-    this.displayName4,
-    this.icon4,
-    this.desc1,
-    this.desc2,
-    this.desc3,
-    this.desc4,
-  }) : super(key: key);
+  AgentCard({Key? key, required this.agent, required this.color})
+      : super(key: key);
 
   Color colorConvert(String color) {
     var converted;
@@ -63,7 +32,7 @@ class AgentCard extends StatelessWidget {
           stretch: true,
           flexibleSpace: FlexibleSpaceBar(
             title: Text(
-              name,
+              agent.displayName ?? '',
               style:
                   TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
             ),
@@ -78,7 +47,7 @@ class AgentCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       Image.network(
-                        baseURL + agentsImageURL + image + '.png',
+                        baseURL + agentsImageURL + agent.id! + '.png',
                         height: 330,
                       ),
                       SizedBox(height: 30),
@@ -91,7 +60,7 @@ class AgentCard extends StatelessWidget {
                         ),
                         child: Center(
                           child: Text(
-                            type,
+                            agent.roleName ?? '',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
@@ -123,7 +92,7 @@ class AgentCard extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 10),
-                    Text(overview),
+                    Text(agent.description ?? ''),
                     SizedBox(height: 10),
                     Text(
                       '// ABILTIES',
@@ -135,24 +104,24 @@ class AgentCard extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
                     AbilityCard(
-                        image: icon1,
-                        ability: displayName1,
-                        description: desc1),
+                        image: agent.displayIcon1,
+                        ability: agent.displayName1,
+                        description: agent.description1),
                     SizedBox(height: 18),
                     AbilityCard(
-                        image: icon2,
-                        ability: displayName2,
-                        description: desc2),
+                        image: agent.displayIcon2,
+                        ability: agent.displayName2,
+                        description: agent.description2),
                     SizedBox(height: 18),
                     AbilityCard(
-                        image: icon3,
-                        ability: displayName3,
-                        description: desc3),
+                        image: agent.displayIcon3,
+                        ability: agent.displayName3,
+                        description: agent.description3),
                     SizedBox(height: 18),
                     AbilityCard(
-                        image: icon4,
-                        ability: displayName4,
-                        description: desc4),
+                        image: agent.displayIcon4,
+                        ability: agent.displayName4,
+                        description: agent.description4),
                     SizedBox(height: 18),
                   ],
                 ),

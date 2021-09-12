@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:valodex/navigation/approutes.dart';
+import 'package:valodex/pages/weapon/widgets/weapon_card.dart';
 import 'package:valodex/services/dio.dart';
 import 'package:valodex/utils/materialTheme.dart';
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: '/splash',
+      // home: WeaponCard(),
       theme: getMaterialTheme(context),
       getPages: Approutes.routes,
     );
