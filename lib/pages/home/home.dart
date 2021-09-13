@@ -166,7 +166,7 @@ class HomeScreen extends StatelessWidget {
                   WeaponTile(
                     name: 'Snipers',
                     image: 'assets/png/operator.png',
-                    category: 'snipers',
+                    category: 'sniper rifles',
                   ),
                   WeaponTile(
                     name: 'Melee',
