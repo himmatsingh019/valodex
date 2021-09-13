@@ -53,7 +53,7 @@ class MapCard extends StatelessWidget {
                 Text(
                   '// OVERVIEW',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -63,7 +63,7 @@ class MapCard extends StatelessWidget {
                 Text(
                   '// MAP FEATURES',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
