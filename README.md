@@ -1,7 +1,7 @@
 Valodex built with Flutter.
 
 
-<img  src = "https://user-images.githubusercontent.com/72291223/132937882-c719dfc7-e635-4848-b50e-3fb05f6b1d7c.png" width="400" />  <img src="https://user-images.githubusercontent.com/72291223/132937916-3094ba4c-09b3-46c2-ba88-0d5f5086af85.png" width = "400"/>
+<img  src = "https://user-images.githubusercontent.com/72291223/132937882-c719dfc7-e635-4848-b50e-3fb05f6b1d7c.png" width="400" / hspace = "20"/>  <img src="https://user-images.githubusercontent.com/72291223/132937916-3094ba4c-09b3-46c2-ba88-0d5f5086af85.png" width = "400"/>
 
 
 
