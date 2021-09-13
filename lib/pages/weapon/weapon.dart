@@ -122,16 +122,18 @@ class WeaponSheet extends StatelessWidget {
                     ),
                   ],
                   rows: weapon.damageRanges!
-                      .map((e) => DataRow(
-                            cells: [
-                              DataCell(Text(
-                                  '${e.rangeStartMeters}-${e.rangeEndMeters} m')),
-                              DataCell(Text(e.headDamage.toString())),
-                              DataCell(Text(e.bodyDamage.toString())),
-                              DataCell(
-                                  Text(e.legDamage!.ceilToDouble().toString())),
-                            ],
-                          ))
+                      .map(
+                        (e) => DataRow(
+                          cells: [
+                            DataCell(Text(
+                                '${e.rangeStartMeters}-${e.rangeEndMeters} m')),
+                            DataCell(Text(e.headDamage.toString())),
+                            DataCell(Text(e.bodyDamage.toString())),
+                            DataCell(
+                                Text(e.legDamage!.ceilToDouble().toString())),
+                          ],
+                        ),
+                      )
                       .toList(),
                 ),
                 SizedBox(height: 18),
